@@ -71,7 +71,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(bootstrap_data, this, photos));
+        try {
+            gridview.setAdapter(new ImageAdapter(bootstrap_data, this, photos));
+        } catch (java.lang.NullPointerException npe) {
+            Toast toast = Toast.makeText(MainActivity.this,R.string.err_msg, Toast.LENGTH_LONG);
+            toast.show();
+        }
         gridview.setOnItemClickListener(new movieOnItemClickListener(this.bootstrap_data));
 
     }

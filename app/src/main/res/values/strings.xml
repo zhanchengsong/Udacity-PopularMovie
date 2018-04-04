@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">PopularMovie</string>
+    <string name="err_msg">Something Went Wrong, please try again</string>
 </resources>
